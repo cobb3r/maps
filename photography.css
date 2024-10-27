@@ -1,0 +1,178 @@
+* {
+    scroll-behavior: smooth;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: clip;
+}
+
+header {
+    height: 10vh;
+    background-color: #2E3944;
+}
+
+nav {
+    font-size: 1em;
+    min-height: 10vh;
+}
+
+#basket {
+    cursor: pointer;
+    color: #d3d9d4;
+}
+
+#counter {
+    width: 2vh;
+    height:2vh;
+    background-color: #6c7f99;
+    z-index:999;
+    border-radius: 2px;
+    position: absolute;
+    transform: translate(70%, 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+#viewBasket {
+    position: absolute;
+    width: 10vw;
+    height: 30vh;
+    z-index: 999999999999;
+    background-color: #2E3944;
+    transform: translate(0, 67%);
+    display: none;
+}
+
+p, h1 {
+    color: #d3d9d4;
+}
+
+.bab, .bab1, .bab2, .bab3 {
+    display: none;
+}
+
+ul {
+    list-style: none;
+}
+
+nav li {
+    letter-spacing: 0.1em;
+    position: relative;
+}
+
+nav li::after{
+    content: '';
+    height: 0.2em;
+    width: 0;
+    position: absolute;
+    background-color: white;
+    transition: all 0.5s ease;
+}
+
+li:hover::after {
+    width: 100%;
+}
+
+li:hover {
+    transform: scale(1.2);
+}
+
+li:hover > a {
+    color: #748d92;
+}
+
+a, i {
+    text-decoration: none;
+    color: #d3d9d4;
+    font-size: 1.5em;
+}
+
+label {
+    color: #d3d9d4;
+}
+
+main {
+    height: 150vh;
+    background-color: #212A31;
+    scrollbar-width: none;
+    font-size: 1.3em;
+}
+
+#enqma {
+    height: 100vh;
+}
+
+#about {
+    scrollbar-width: none; 
+}
+
+main form {
+    height: 85vh;
+    width: 90vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    background: linear-gradient(90deg, rgba(33,42,49,1) 20%, rgba(60,87,113,1) 50%, rgba(33,42,49,1) 80%);
+}
+
+input, textarea {
+    width: 30%;
+}
+
+#infob {
+    border: 1px, dotted, black;
+}
+
+img {
+    cursor: pointer;
+    transition: 0.5s ease all;
+}
+
+main img:hover {
+    scale: 1.05;
+}
+
+button {
+    border-radius: 0.8em;
+    box-shadow: rgba(25, 25, 25, 0.04) 0 0 1px 0, rgba(0, 0, 0, 0.1) 0 3px 4px 0;
+    background-color: #d3d9d4;
+    cursor: pointer;
+    border-width: 0;
+    display: inline;
+}
+
+button:hover {
+    background-color: #748d92;
+    transform: scale(1.2);
+}
+
+button[class="position-absolute start-50 bottom-0"] {
+    display: none;
+}
+
+#portcon {
+    overflow: hidden;
+}
+
+#portcon:hover button {
+    display: block;
+}
+
+footer {
+    height: fit-content;
+    background-color: #2E3944;
+}
+
+#loading {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
