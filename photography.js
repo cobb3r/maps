@@ -1,22 +1,11 @@
 document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("loading").style.display = 'none';
+    let loadingScreen = document.getElementById("loading");
+    loadingScreen.style.display = 'none';
 })
 
-function showNav() {
-    if (document.querySelector(".bab").style.display == "none") {
-        document.querySelectorAll('.bab').forEach(function(drop) {
-            drop.style.display = 'block';
-         });
-    } else {
-        document.querySelectorAll('.bab').forEach(function(up) {
-            up.style.display = 'none';
-         });
-    }
-}
-
-function carousel(y) {
+function carousel(selectedImage) {
     if (document.getElementById('carouselExampleIndicators').style.display == 'none') {
-        document.getElementById(y).classList.add("active");
+        document.getElementById(selectedImage).classList.add("active");
         document.querySelectorAll('img').forEach(function(hide) {
             hide.style.display = 'none';
          });
@@ -28,7 +17,7 @@ function carousel(y) {
          document.getElementById('checkpho').style.display = 'block';
          document.getElementById('checkbut').style.opacity = '1';
     } else {
-        document.getElementById(y).classList.remove("active");
+        document.getElementById(selectedImage).classList.remove("active");
         document.querySelectorAll('img').forEach(function(show) {
             show.style.display = 'block';
          });
@@ -40,7 +29,7 @@ function carousel(y) {
 }
 
 let shoppingCart = {
-    addToCart: function(z) {
+    addToCart: function(ChosenImage) {
         document.getElementById("viewBasket").innerHTML = "";
         document.getElementById("viewBasket").style.display = "block";
         document.getElementById("counter").textContent++;
@@ -55,7 +44,7 @@ let shoppingCart = {
         const imageCol = document.createElement("div");
         const textCol  = document.createElement("div");
         const imgSrc = document.createElement("img");
-        imgSrc.src = "../Images/" + z + ".jpg"
+        imgSrc.src = "../Images/" + ChosenImage + ".jpg"
         imgSrc.style.height = "5vh"
         imgSrc.style.width = "100%"
         imgSrc.id = "checkpho"
@@ -74,7 +63,7 @@ let shoppingCart = {
         textCol.style.color = "#d3d9d4"
         textCol.style.transform = "translate(40%, -100%)"
         textCol.className = "text-center"
-        textCol.innerHTML = "photo of " + z;
+        textCol.innerHTML = "photo of " + ChosenImage;
         textCol.appendChild(closeButton)
         closeButton.innerHTML = "x";
         closeButton.onclick = function() {
